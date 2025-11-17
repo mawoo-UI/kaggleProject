@@ -6,6 +6,34 @@
 
 ## 🧐 개요 및 목적 (Overview & Purpose)
 
+
+🏆 제출 가이드라인 적용 예시
+1. 트랙 선택 (Select One Track)
+제시된 프로젝트는 콘텐츠 제작 자동화에 초점을 맞추고 있습니다. 이를 가장 잘 설명할 수 있는 트랙을 선택합니다.
+
+선택 트랙: 콘텐츠 제작 (Content Creation)
+
+2. 에이전트를 구축할 문제 및 해결책 제시 (Define the Problem and Solution)
+문제(Problem):
+
+고품질 학습 콘텐츠의 소비 및 정리 비효율성
+
+저는 YouTube에서 기술, 트렌드, 전문 지식과 관련된 비디오 콘텐츠를 자주 시청하지만, 중요한 내용을 수동으로 요약하고 **개인 지식 저장소(Notion)**에 정리하는 과정이 **너무 많은 시간(주당 최소 5~7시간)**을 소모합니다. 특히 비영어권 콘텐츠의 경우, 정확한 번역 및 핵심 요약에 어려움을 겪으며, 이로 인해 학습의 연속성과 효율성이 크게 저하됩니다.
+
+해결책(Solution):
+
+LLM 기반 콘텐츠 자동 정리 에이전트 구축
+
+YouTube-Gemini-Notion 통합 자동화 에이전트를 구축하여 이 문제를 해결합니다. 이 다중 에이전트 시스템은 다음과 같은 기능을 수행합니다.
+
+YouTubeContentAgent: 입력된 YouTube URL에서 자막을 자동으로 추출하고, 필요시 **Gemini AI 기반 TranslationTool**을 통해 한국어로 번역합니다.
+
+ContentSummaryAgent: 번역된 자막을 **Gemini AI 기반 GeminiSummaryTool**을 사용하여 핵심 내용을 고품질로 요약합니다.
+
+NotionPublishAgent: 요약 결과를 Notion API를 통해 구조화된 페이지 (제목, 요약, 원문 토글, 메타데이터 포함)로 자동 발행합니다.
+
+
+
 이 프로젝트는 **YouTube 콘텐츠 자동 분석 및 문서화**를 **자율적으로** 처리하도록 설계된 AI Agent 협업 시스템인 **YouTube-Gemini-Notion Agent**를 구현합니다.
 
 * **주요 목표:** YouTube URL 하나만 입력하면 자막 추출, AI 요약, Notion 페이지 생성까지 완전 자동화
